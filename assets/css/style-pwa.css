@@ -1,0 +1,111 @@
+:root{
+    --height-nav: 75px;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+h1{
+    font-family: 'Montserrat', sans-serif;
+}
+nav{
+    width: 100%;
+    height: var(--height-nav);
+    line-height: var(--height-nav);
+    font-family: 'Montserrat', sans-serif;
+    background-color: #68b9ea;
+}
+.topnav li a, .sidenav li a{
+    font-size: 18.5px;
+    font-weight: bold;
+}
+.sidenav{
+    border-left: 10px solid #68b9ea;
+}
+.sidenav li a{
+    border-bottom: 1px solid rgba(0, 0, 0, .025);
+}
+.sidenav li a:first-child{
+    border-top: 1px solid rgba(0, 0, 0, .025);
+}
+
+
+#big-body{
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+#p-title{
+    width: 100%;
+    background: rgba(0, 0, 0, .025);
+}
+h1.title{
+    margin: 0;
+    padding: 15px 0;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.informasi{
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #fff;
+    background-color: #68b9ea;
+    padding: 5px 25px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.informasi table tr{
+    border: none;
+}
+.informasi table tr td{
+    padding: 2px 5px;
+}
+.informasi table .t-info{
+    width: 20%;
+}
+
+#standings{
+    width: 100%;
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+/* Beranda */
+.card-content:hover{
+    background: #68b9ea;
+}
+
+.card a{
+    transition: .15s color ease-in;
+}
+.card a:hover{
+    color: #fff;
+}
+
+/* Page Favotite */
+#boxTambah{
+    width: 100%;
+    text-align: center;
+}
+
+
+
+@media screen and (min-width: 800px){
+    .title h1{
+        font-size: 64px;
+    }
+
+    .home-page h1{
+        font-size: 96px;
+    }
+
+    .card-content h4{
+        font-size: 34px;
+    }
+}

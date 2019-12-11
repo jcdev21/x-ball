@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>X-Ball</title>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#68b9ea">
+
+    <link rel="stylesheet" href="./assets/css/reset.css" crossorigin="anonymous">
+    <link rel="preload" href="./assets/font/Montserrat-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <style>
+        @font-face {
+            font-family:'Montserrat';font-style:'normal';font-weight:400;font-display:swap;
+            src: local('Montserrat'),local('Montserrat'),url(./assets/font/Montserrat-Regular.ttf)format('truetype')
+        }
+    </style>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="./assets/css/materialize.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style-pwa.css" crossorigin="anonymous">
+
+    <script src="/assets/js/idb.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            if (!("indexedDB" in window)) {
+                console.log('Page ini menggunakan indexedDB, tetapi browser anda tidak mendukungnya!');
+            }
+        });
+    </script>
+</head>
+<body>
+    <!-- Navigasi -->
+    <nav role="navigation">
+        <div class="nav-wrapper container">
+            <a href="#" class="brand-logo" id="logo-container">X-Ball</a>
+            <a href="#" class="sidenav-trigger" data-target="nav-mobile">☰</a>
+
+            <ul class="topnav right hide-on-med-and-down"></ul>
+            <ul class="sidenav" id="nav-mobile"></ul>
+        </div>
+    </nav>
+
+    <div id="big-body" style="margin-top: 35px;">
+        <div class="container">
+            <div id="body-content" class="row"></div>
+        </div>
+    </div>
+
+    <script src="./assets/js/materialize.min.js" crossorigin="anonymous"></script>
+    <script src="./assets/js/nav.js" crossorigin="anonymous"></script>
+    <script src="./assets/js/api.js" crossorigin="anonymous"></script>
+    <script src="./assets/js/main.js" crossorigin="anonymous"></script>
+    <script src="./assets/js/app.js" crossorigin="anonymous"></script>
+    <script src="./assets/js/notifikasi.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
