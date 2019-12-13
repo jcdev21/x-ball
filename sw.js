@@ -1,4 +1,4 @@
-importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js');
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js');
 
 workbox.precaching.precacheAndRoute([
     {url: './', revision: '1'},
@@ -25,17 +25,22 @@ workbox.precaching.precacheAndRoute([
     {url: './pages/favorit.html', revision: '1'},
     {url: './pages/pilihFavorit.html', revision: '1'},
     {url: './push.js', revision: '1'},
-]);
+], {
+    // Ignore all URL parameters.
+    ignoreURLParametersMatching: [/.*/]
+});
 
 workbox.routing.registerRoute(
-    new RegExp('https://api.football-data.org/'),
-    workbox.strategies.networkFirst({
-        networkTimeoutSeconds: 3,
-        cacheName: 'stories-api',
+    new RegExp('https://api.football-data.org/v2/'),
+    new workbox.strategies.StaleWhileRevalidate({
+        cacheName: 'x-api',
         plugins: [
+            new workbox.cacheableResponse.Plugin({
+                statuses: [200]
+            }),
             new workbox.expiration.Plugin({
                 maxEntries: 50,
-                maxAgeSeconds: 60 * 60 * 24 * 7
+                maxAgeSeconds: 60 * 60 * 24 * 4
             })
         ]
     })
